@@ -1,18 +1,17 @@
+import { useState } from "react"
+
 function App() {
-  function clickButton(){
-    alert("Hii !")
-    test()
-  }  
-  function test(){
-    alert("Test.")
-  }  
+const [data,setData]=useState("peter")
+function update(){
+  setData('john')
+}
+
+
   return (
   <div>
-      <h1>Hello</h1>
-      <button onClick={ function clickButton(){
-    alert("Hii !")
-    test()
-  } }>Button</button>
+      <h1>State</h1>
+      <h2>{data}</h2>
+      <button onClick={update}>Update Data</button>
     </div>
   )
 }
