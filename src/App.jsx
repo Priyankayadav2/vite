@@ -1,17 +1,18 @@
-import { useState } from "react"
 function App() {
-const [count,setCount]=useState(0)
-function decFun(){
-  setCount(count-1)
-}
-function incFun(){
-  setCount(count+1)
+function elementD(){
+  return (
+    <div>
+      <h1>ElementD</h1>
+    </div>
+  )
 }
   return (
   <div>
-    <button onClick={decFun}>decrement</button>
-    <h2>Count = {count}</h2>
-    <button onClick={incFun}>increament</button>
+    <h1>JSX</h1>
+    <h1>{2+2} {6-2}</h1>
+    <h1>{5-3}</h1>
+    <h1>{"hello".toUpperCase()}</h1>
+    {elementD()}
     </div>
   )
 }
