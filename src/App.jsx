@@ -1,17 +1,20 @@
 import { useState } from "react"
 function App() {
 const [count,setCount]=useState(0)
-function decFun(){
-  setCount(count-1)
-}
-function incFun(){
-  setCount(count+1)
+function countFun(item){
+  if(item==="increment"){
+    setCount(count+1)
+  }
+  else if(item==="decrement"){
+    setCount(count-1)
+  }
 }
   return (
   <div>
-    <button onClick={decFun}>decrement</button>
+    <button onClick={()=>countFun("decrement")}>decrement</button>
     <h2>Count = {count}</h2>
-    <button onClick={incFun}>increament</button>
+    
+    <button onClick={()=>countFun("increment")}>increment</button>
     </div>
   )
 }
