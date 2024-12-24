@@ -1,30 +1,11 @@
-import { useState } from "react";
+import User from './User'
 function App() {
-  const [count, setCount] = useState(1);
-  function countFun(item) {
-    if(count<=1 && item==="decrement"){
-      return false;
-    }
-    // setCount((preCount) => 
-    //   item === "increment" ? preCount+1 : Math.max(preCount-1,1)
-    // );
-    let a=count;
-    // if(item==="increment"){
-    //   a++;
-    // }
-    // else{
-    //   a--;
-    // }
-    item ==="increment" ? a++ : a--
-    
-    setCount(a)
-    
-  }
+  let name="rahul"
+  let email="rahul01@gmail"
   return (
     <div>
-      <button onClick={() => countFun("decrement")}>decrement</button>
-      <h2>Count = {count}</h2>
-      <button onClick={() => countFun("increment")}>increment</button>
+      <h1>Props</h1>
+      <User name={name} email={email}/>
     </div>
   );
 }
