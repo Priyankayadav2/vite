@@ -3,7 +3,7 @@ function Counter({count,reset}){
         <div>
             <h1>{count}</h1>
             <h1>Counter</h1>
-            <button onClick={reset}>Reset</button>
+            <button onClick={()=>reset(0)}>Reset</button>
         </div>
     )
 }
