@@ -1,24 +1,10 @@
-import User from './User'
-import Counter from './Counter'
-import { useState } from 'react';
+import Signup from "./Signup";
 function App() {
-  const[count,setCount]=useState(0)
   
-  function handleReset(){
-    setCount(0)
-  }
-
-  const userdata = {
-    name:"rahul",
-    email:"rahul01@gmail"
-  };
   return (
     <div>
-      <h1>Props</h1>
-      <User user={userdata}/>
-      <Counter count ={count} reset={setCount}/><br></br>
-      <button onClick={()=>setCount(count+1)}>Increment</button>
-      <button onClick={()=>setCount(count-1)}>Decrement</button>
+      <h1>Forms</h1>
+      <Signup />
     </div>
   );
 }
