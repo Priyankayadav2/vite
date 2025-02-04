@@ -4,7 +4,7 @@ function Signup() {
     const[email,setEmail]=useState()
     const[password,setPassword]=useState()
     const[subject,setSubject]=useState()
-    const[skills,setSkills]=useState()
+    const[skills,setSkills]=useState([])
 
     const handleNameChange = (event) => {
         setName(event.target.value);
@@ -12,28 +12,32 @@ function Signup() {
         
     };
     const handleSkills=(event)=>{
-        console.log(event.target.value);
-        console.log(event.target.checked);
+
         if(event.target.checked){
-            setSkills(event.target.value);
-            console.log("work");
+            setSkills([...skills,event.target.value]);
+        
         }
         else{
-            setSkills()
-            console.log("not work");
-        }
+            setSkills(skills.filter((skill)=>skill !==event.target.value));
             
         }
 
+        
+
+            
+        }
+
+        console.log(skills)
+
     
     const submit=()=>{
-        console.log(name,email,password,subject,checkbox)
+        console.log(name,email,password,subject,skills)
     
     }
     return(
         <div>
             <h1>
-                {skills}
+                {skills.join(',')}
             </h1>
             <h1>Sign Up Page</h1>
             <div>
@@ -49,7 +53,7 @@ function Signup() {
             
             <label for="container">Skills : </label>
             
-            <input type="checkbox"  value="javascript" onChange={(event)=>{handleSkills(event)} }/>
+            <input type="checkbox"  value="javascript"onChange={(event)=>{handleSkills(event)} }/>
             
             <label class="container">JavaScript
     
